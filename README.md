@@ -146,19 +146,19 @@ La evaluación experimental corrobora el crecimiento exponencial del espacio de 
 
 ## Modelos y Datasets en Hugging Face
 
-Los conjuntos de datos y los modelos entrenados en PyTorch se encuentran alojados de forma pública en **Hugging Face**:
+Los conjuntos de datos y los modelos entrenados en PyTorch se encuentran alojados en [**Hugging Face**](https://huggingface.co/datasets/varokhian/tfg-alo):
 
-- 📦 **Dataset de Auto-juego de 6 Horas ($8 \times 8$)**: Partidas sintéticas con más de 20.000 estados serializados en marco canónico.
+- 📦 **Dataset de Auto-juego de 6 Horas ($8 \times 8$)**: Partidas sintéticas con más de 20.000 estados serializados.
 - 🏋️ **Pesos de la Red Convolucional de Valor (`mejor_red_valor_8x8.pth`)**: Checkpoint entrenado con mínima pérdida de validación MSE.
 - 🤖 **Pesos del Agente Tabula Rasa (`tabula_rasa_4x4.pth`)**: Checkpoint convergente del agente autónomo en $4 \times 4$.
 
-> Consulta la carpeta [`adjuntar_dataset/`](../adjuntar_dataset/) o el perfil del proyecto en Hugging Face para acceder a los archivos pesados y al script de carga rápida `cargar_dataset_hf.py`.
+> Consulta el enlace para acceder a los archivos y al script de carga rápida `cargar_dataset_hf.py`.
 
 ---
 
 ## 📖 Clarificación de Notación y Código
 
-En la implementación de búsqueda adversaria en `minimax.py`, se utiliza el convenio egocéntrico `jugador_max = jugador_actual` en cada turno (perspectiva equivalente a Negamax). Para consultar la explicación detallada de la jerarquía de etiquetado en 3 niveles (Nivel Global, Nivel de Búsqueda y Nivel Canónico de PyTorch), revisa el documento adjunto:
+En la implementación de búsqueda adversaria en `minimax.py`, se utiliza el convenio `jugador_max = jugador_actual` en cada turno (perspectiva equivalente a Negamax). Para consultar la explicación detallada de la jerarquía de etiquetado en 3 niveles (Nivel Global, Nivel de Búsqueda y Nivel Canónico de PyTorch), revisa el documento adjunto:
 📄 **[GLOSARIO_FUNCIONES_Y_NOTACION.md](GLOSARIO_FUNCIONES_Y_NOTACION.md)**
 
 ---
