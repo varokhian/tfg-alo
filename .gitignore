@@ -1,0 +1,34 @@
+# Entornos virtuales
+.venv/
+venv/
+env/
+ENV/
+
+# Python bytecode y caché
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Modelos binarios pesados (alojados en Hugging Face / Releases)
+*.pth
+*.pt
+*.onnx
+
+# Datasets pesados en CSV (alojados en Hugging Face)
+*6_horas*.csv
+*.zip
+*.tar.gz
+
+# Archivos temporales y de IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs y pruebas scratch
+*.log
+scratch/
