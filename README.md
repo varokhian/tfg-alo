@@ -1,5 +1,4 @@
-# Teoría de Juegos y Aprendizaje por Refuerzo en Juegos de Suma Cero: De Minimax Clásico a AlphaZero
-
+# TFG: Implementación
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0%2B-red.svg)](https://pytorch.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
