@@ -7,7 +7,7 @@
 
 > **Trabajo de Fin de Grado en Matemáticas**  
 > *Autor:* Álvaro León Ojeda  
-> *Área:* Matemática Aplicada, Teoría de Juegos, Inteligencia Artificial y Aprendizaje por Refuerzo.
+
 
 ---
 
@@ -17,8 +17,8 @@ Este repositorio contiene la implementación completa, modular y reproducible de
 
 El proyecto aborda desde la verificación del **Teorema de Zermelo** en juegos completamente resolubles (Tres en Raya) hasta el desarrollo y evaluación de motores de decisión autónomos para **Othello/Reversi ($8 \times 8$ y $4 \times 4$)**, comparando:
 1. **Búsqueda Exhaustiva y Heurística Clásica**: Minimax Universal y Minimax con Poda Alfa-Beta ($\alpha$-$\beta$) acotada por profundidad con heurísticas posicionales, de movilidad e híbridas.
-2. **Búsqueda en Árbol de Monte Carlo (MCTS)**: MCTS puro guiado por simulaciones estocásticas (*rollouts*) y selección UCB1 (*Upper Confidence Bound for Trees*).
-3. **MCTS Guiado por Red Neuronal (CNN)**: Reemplazo de los rollouts aleatorios por inferencia directa de una Red Convolucional de Valor entrenada en marco canónico ($O(1)$ latencia).
+2. **Búsqueda en Árbol de Monte Carlo (MCTS)**: MCTS puro guiado por simulaciones (*rollouts*) y selección UCB1 (*Upper Confidence Bound for Trees*).
+3. **MCTS Guiado por Red Neuronal (CNN)**: Reemplazo de los rollouts aleatorios por inferencia directa de una red de valor.
 4. **Aprendizaje Autónomo Tabula Rasa**: Entrenamiento por auto-juego (*Self-Play*) con arquitectura dual (política y valor) y selección PUCT sin conocimiento previo humano.
 
 ---
@@ -29,7 +29,7 @@ El proyecto aborda desde la verificación del **Teorema de Zermelo** en juegos c
 ├── juegos.py                          # Jerarquía POO abstracta (Juego, TresEnRaya, Othello 8x8 y 4x4)
 ├── minimax.py                         # Algoritmos de Minimax Universal y Poda Alfa-Beta con heurísticas
 ├── mcts.py                            # Implementación de NodoMCTS, MCTS Clásico y MCTS Neuronal
-├── dataset_pytorch.py                 # Transformación a tensores canónicos (2, N, N) y DataLoaders
+├── dataset_pytorch.py                 # Transformación a tensores (2, N, N) y DataLoaders
 ├── entrenamiento_supervisado.py       # Arquitectura CNN RedDeValorCNN y bucle de entrenamiento en PyTorch
 ├── main.py                            # Interfaz CLI interactiva y generador estocástico de partidas
 │
@@ -37,10 +37,10 @@ El proyecto aborda desde la verificación del **Teorema de Zermelo** en juegos c
 ├── benchmark_othello_clasico.py       # Torneo clásico determinista (Capítulo 5)
 ├── benchmark_global_cap6.py           # Torneo multiramas del Capítulo 6 (MCTS Neuronal vs Minimax vs Heurísticas)
 ├── tabula_rasa_4x4.py                 # Pipeline de auto-juego y aprendizaje Tabula Rasa en Othello 4x4
-├── verificar_zermelo.py               # Demostración empírica del Teorema de Zermelo en Tres en Raya
-├── verificar_zermelo_y_podas.py       # Comparativa formal de estados explorados y poda alfa-beta
+├── verificar_zermelo.py               # Comprobación del Teorema de Zermelo en Tres en Raya
+├── verificar_zermelo_y_podas.py       # Comparativa de estados explorados y poda alfa-beta
 │
-├── GLOSARIO_FUNCIONES_Y_NOTACION.md   # Glosario formal de funciones y clarificación del abuso de notación
+├── GLOSARIO_FUNCIONES_Y_NOTACION.md   # Glosario de funciones
 ├── requirements.txt                   # Dependencias de Python necesarias
 ├── .gitignore                         # Exclusión de entornos virtuales, cachés y archivos pesados
 ├── LICENSE                            # Licencia abierta MIT
@@ -100,7 +100,7 @@ python benchmark_othello_estadistico.py
 ```
 
 ### 4. Entrenamiento de la Red Convolucional de Valor (Capítulo 6)
-Entrena la red de valor `RedDeValorCNN` sobre los tensores espaciales $(2, 8, 8)$ normalizados en marco canónico:
+Entrena la red de valor `RedDeValorCNN` sobre los tensores $(2, 8, 8)$:
 ```bash
 python entrenamiento_supervisado.py
 ```
