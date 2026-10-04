@@ -13,7 +13,7 @@
 
 ## 📌 Descripción General
 
-Este repositorio contiene la implementación completa, modular y reproducible del Trabajo de Fin de Grado (TFG) en Matemáticas. 
+Este repositorio contiene la implementación completa, modular y reproducible del Trabajo de Fin de Grado (TFG) en Matemáticas **Introducción a la Inteligencia Artificial: Búsqueda con adversario y juegos**. 
 
 El proyecto aborda desde la verificación del **Teorema de Zermelo** en juegos completamente resolubles (Tres en Raya) hasta el desarrollo y evaluación de motores de decisión autónomos para **Othello/Reversi ($8 \times 8$ y $4 \times 4$)**, comparando:
 1. **Búsqueda Exhaustiva y Heurística Clásica**: Minimax Universal y Minimax con Poda Alfa-Beta ($\alpha$-$\beta$) acotada por profundidad con heurísticas posicionales, de movilidad e híbridas.
