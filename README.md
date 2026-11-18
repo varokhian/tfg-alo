@@ -13,7 +13,7 @@
 
 ## 📄 Memoria del Trabajo de Fin de Grado
 
-El documento completo y definitivo de la memoria académica (127 páginas en formato PDF) está disponible para su consulta y lectura interactiva en este repositorio:  
+Documento completo de la memoria:  
 👉 **[Consultar / Descargar Memoria Completa del TFG (PDF)](memoria/Memoria_TFG_Leon_Ojeda.pdf)**
 
 ---
