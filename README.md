@@ -1,5 +1,4 @@
-# Teoría de Juegos y Aprendizaje por Refuerzo en Juegos de Suma Cero: De Minimax Clásico a AlphaZero
-
+# TFG: Implementación
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0%2B-red.svg)](https://pytorch.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -8,7 +7,7 @@
 
 > **Trabajo de Fin de Grado en Matemáticas**  
 > *Autor:* Álvaro León Ojeda  
-> *Área:* Matemática Aplicada, Teoría de Juegos, Inteligencia Artificial y Aprendizaje por Refuerzo.
+
 
 ---
 
@@ -21,12 +20,12 @@ El documento completo y definitivo de la memoria académica (127 páginas en for
 
 ## 📌 Descripción General
 
-Este repositorio contiene la implementación completa, modular y reproducible del Trabajo de Fin de Grado (TFG) en Matemáticas. 
+Este repositorio contiene la implementación del Trabajo de Fin de Grado (TFG) en Matemáticas **Introducción a la Inteligencia Artificial: Búsqueda con adversario y juegos**. 
 
-El proyecto aborda desde la verificación del **Teorema de Zermelo** en juegos completamente resolubles (Tres en Raya) hasta el desarrollo y evaluación de motores de decisión autónomos para **Othello/Reversi ($8 \times 8$ y $4 \times 4$)**, comparando:
+El proyecto aborda desde el **Teorema de Zermelo** en juegos completamente resolubles (Tres en Raya) hasta el desarrollo y evaluación de motores de decisión autónomos para **Othello/Reversi ($8 \times 8$ y $4 \times 4$)**, comparando:
 1. **Búsqueda Exhaustiva y Heurística Clásica**: Minimax Universal y Minimax con Poda Alfa-Beta ($\alpha$-$\beta$) acotada por profundidad con heurísticas posicionales, de movilidad e híbridas.
-2. **Búsqueda en Árbol de Monte Carlo (MCTS)**: MCTS puro guiado por simulaciones estocásticas (*rollouts*) y selección UCB1 (*Upper Confidence Bound for Trees*).
-3. **MCTS Guiado por Red Neuronal (CNN)**: Reemplazo de los rollouts aleatorios por inferencia directa de una Red Convolucional de Valor entrenada en marco canónico ($O(1)$ latencia).
+2. **Búsqueda en Árbol de Monte Carlo (MCTS)**: MCTS puro guiado por simulaciones (*rollouts*) y selección UCB1 (*Upper Confidence Bound for Trees*).
+3. **MCTS Guiado por Red Neuronal (CNN)**: Reemplazo de los rollouts aleatorios por inferencia directa de una red de valor.
 4. **Aprendizaje Autónomo Tabula Rasa**: Entrenamiento por auto-juego (*Self-Play*) con arquitectura dual (política y valor) y selección PUCT sin conocimiento previo humano.
 
 ---
@@ -39,7 +38,7 @@ El proyecto aborda desde la verificación del **Teorema de Zermelo** en juegos c
 ├── juegos.py                          # Jerarquía POO abstracta (Juego, TresEnRaya, Othello 8x8 y 4x4)
 ├── minimax.py                         # Algoritmos de Minimax Universal y Poda Alfa-Beta con heurísticas
 ├── mcts.py                            # Implementación de NodoMCTS, MCTS Clásico y MCTS Neuronal
-├── dataset_pytorch.py                 # Transformación a tensores canónicos (2, N, N) y DataLoaders
+├── dataset_pytorch.py                 # Transformación a tensores (2, N, N) y DataLoaders
 ├── entrenamiento_supervisado.py       # Arquitectura CNN RedDeValorCNN y bucle de entrenamiento en PyTorch
 ├── main.py                            # Interfaz CLI interactiva y generador estocástico de partidas
 │
@@ -47,10 +46,10 @@ El proyecto aborda desde la verificación del **Teorema de Zermelo** en juegos c
 ├── benchmark_othello_clasico.py       # Torneo clásico determinista (Capítulo 5)
 ├── benchmark_global_cap6.py           # Torneo multiramas del Capítulo 6 (MCTS Neuronal vs Minimax vs Heurísticas)
 ├── tabula_rasa_4x4.py                 # Pipeline de auto-juego y aprendizaje Tabula Rasa en Othello 4x4
-├── verificar_zermelo.py               # Demostración empírica del Teorema de Zermelo en Tres en Raya
-├── verificar_zermelo_y_podas.py       # Comparativa formal de estados explorados y poda alfa-beta
+├── verificar_zermelo.py               # Comprobación del Teorema de Zermelo en Tres en Raya
+├── verificar_zermelo_y_podas.py       # Comparativa de estados explorados y poda alfa-beta
 │
-├── GLOSARIO_FUNCIONES_Y_NOTACION.md   # Glosario formal de funciones y clarificación del abuso de notación
+├── GLOSARIO_FUNCIONES_Y_NOTACION.md   # Glosario de funciones
 ├── requirements.txt                   # Dependencias de Python necesarias
 ├── .gitignore                         # Exclusión de entornos virtuales, cachés y archivos pesados
 ├── LICENSE                            # Licencia abierta MIT
@@ -110,7 +109,7 @@ python benchmark_othello_estadistico.py
 ```
 
 ### 4. Entrenamiento de la Red Convolucional de Valor (Capítulo 6)
-Entrena la red de valor `RedDeValorCNN` sobre los tensores espaciales $(2, 8, 8)$ normalizados en marco canónico:
+Entrena la red de valor `RedDeValorCNN` sobre los tensores $(2, 8, 8)$:
 ```bash
 python entrenamiento_supervisado.py
 ```
@@ -156,19 +155,19 @@ La evaluación experimental corrobora el crecimiento exponencial del espacio de 
 
 ## Modelos y Datasets en Hugging Face
 
-Los conjuntos de datos y los modelos entrenados en PyTorch se encuentran alojados de forma pública en **Hugging Face**:
+Los conjuntos de datos y los modelos entrenados en PyTorch se encuentran alojados en [**Hugging Face**](https://huggingface.co/datasets/varokhian/tfg-alo):
 
-- 📦 **Dataset de Auto-juego de 6 Horas ($8 \times 8$)**: Partidas sintéticas con más de 20.000 estados serializados en marco canónico.
+- 📦 **Dataset de Auto-juego de 6 Horas ($8 \times 8$)**: Partidas sintéticas con más de 20.000 estados serializados.
 - 🏋️ **Pesos de la Red Convolucional de Valor (`mejor_red_valor_8x8.pth`)**: Checkpoint entrenado con mínima pérdida de validación MSE.
 - 🤖 **Pesos del Agente Tabula Rasa (`tabula_rasa_4x4.pth`)**: Checkpoint convergente del agente autónomo en $4 \times 4$.
 
-> Consulta la carpeta [`adjuntar_dataset/`](../adjuntar_dataset/) o el perfil del proyecto en Hugging Face para acceder a los archivos pesados y al script de carga rápida `cargar_dataset_hf.py`.
+> Consulta el enlace para acceder a los archivos y al script de carga rápida `cargar_dataset_hf.py`.
 
 ---
 
 ## 📖 Clarificación de Notación y Código
 
-En la implementación de búsqueda adversaria en `minimax.py`, se utiliza el convenio egocéntrico `jugador_max = jugador_actual` en cada turno (perspectiva equivalente a Negamax). Para consultar la explicación detallada de la jerarquía de etiquetado en 3 niveles (Nivel Global, Nivel de Búsqueda y Nivel Canónico de PyTorch), revisa el documento adjunto:
+En la implementación de búsqueda adversaria en `minimax.py`, se utiliza el convenio `jugador_max = jugador_actual` en cada turno (perspectiva equivalente a Negamax). Para consultar la explicación detallada de la jerarquía de etiquetado en 3 niveles (Nivel Global, Nivel de Búsqueda y Nivel Canónico de PyTorch), revisa el documento adjunto:
 📄 **[GLOSARIO_FUNCIONES_Y_NOTACION.md](GLOSARIO_FUNCIONES_Y_NOTACION.md)**
 
 ---
