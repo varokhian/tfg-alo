@@ -4,10 +4,18 @@
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0%2B-red.svg)](https://pytorch.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Hugging Face](https://img.shields.io/badge/Hugging%20Face-Datasets%20%26%20Models-yellow.svg)](https://huggingface.co/)
+[![Memoria PDF](https://img.shields.io/badge/Memoria-PDF-red.svg)](memoria/Memoria_TFG_Leon_Ojeda.pdf)
 
 > **Trabajo de Fin de Grado en Matemáticas**  
 > *Autor:* Álvaro León Ojeda  
 > *Área:* Matemática Aplicada, Teoría de Juegos, Inteligencia Artificial y Aprendizaje por Refuerzo.
+
+---
+
+## 📄 Memoria del Trabajo de Fin de Grado
+
+El documento completo y definitivo de la memoria académica (127 páginas en formato PDF) está disponible para su consulta y lectura interactiva en este repositorio:  
+👉 **[Consultar / Descargar Memoria Completa del TFG (PDF)](memoria/Memoria_TFG_Leon_Ojeda.pdf)**
 
 ---
 
@@ -26,6 +34,8 @@ El proyecto aborda desde la verificación del **Teorema de Zermelo** en juegos c
 ## 🗂️ Estructura del Repositorio
 
 ```text
+├── memoria/
+│   └── Memoria_TFG_Leon_Ojeda.pdf    # Memoria académica completa del TFG (127 páginas en PDF)
 ├── juegos.py                          # Jerarquía POO abstracta (Juego, TresEnRaya, Othello 8x8 y 4x4)
 ├── minimax.py                         # Algoritmos de Minimax Universal y Poda Alfa-Beta con heurísticas
 ├── mcts.py                            # Implementación de NodoMCTS, MCTS Clásico y MCTS Neuronal
