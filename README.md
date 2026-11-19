@@ -20,10 +20,10 @@ Documento completo de la memoria:
 
 ## 📌 Descripción General
 
-Este repositorio contiene la implementación del Trabajo de Fin de Grado (TFG) en Matemáticas **Introducción a la Inteligencia Artificial: Búsqueda con adversario y juegos**. 
+Este repositorio contiene la implementación del Trabajo de Fin de Grado (TFG) en Matemáticas **"Introducción a la Inteligencia Artificial: Búsqueda con adversario y juegos"**. 
 
 El proyecto aborda desde el **Teorema de Zermelo** en juegos completamente resolubles (Tres en Raya) hasta el desarrollo y evaluación de motores de decisión autónomos para **Othello/Reversi ($8 \times 8$ y $4 \times 4$)**, comparando:
-1. **Búsqueda Exhaustiva y Heurística Clásica**: Minimax Universal y Minimax con Poda Alfa-Beta ($\alpha$-$\beta$) acotada por profundidad con heurísticas posicionales, de movilidad e híbridas.
+1. **Búsqueda Exhaustiva y Heurística Clásica**: Minimax Universal y Minimax con Poda Alfa-Beta ($\alpha$ - $\beta$) acotada por profundidad con heurísticas posicionales, de movilidad e híbridas.
 2. **Búsqueda en Árbol de Monte Carlo (MCTS)**: MCTS puro guiado por simulaciones (*rollouts*) y selección UCB1 (*Upper Confidence Bound for Trees*).
 3. **MCTS Guiado por Red Neuronal (CNN)**: Reemplazo de los rollouts aleatorios por inferencia directa de una red de valor.
 4. **Aprendizaje Autónomo Tabula Rasa**: Entrenamiento por auto-juego (*Self-Play*) con arquitectura dual (política y valor) y selección PUCT sin conocimiento previo humano.
